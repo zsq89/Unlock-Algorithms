@@ -1,6 +1,11 @@
+'''
+Find the shortest path for every nodes in a 
+directed acyclic graph
+'''
+
 import sys
 import math
-from myUtil import printList
+from myUtil import printList, printDict
 from daqTopologicalSort import daqTopoSort
 
 INFINITY = math.inf
@@ -61,9 +66,10 @@ def daqGetEdges(aDaq):
 	for key, value in aDaq.items():
 		for v in value:
 			edges.append((key, v))
-	printList(edges)
 	return edges
 	pass
+
+
 
 def main():
 	daq = {
@@ -81,22 +87,26 @@ def main():
 		'leg pads':['catch glove'],
 		'catch glove':['blocker'],
 		'blocker':[]
-	}
+       	}
 	sourceNode = "undershorts"
 	edges = daqGetEdges(daq)
+	print("\n*********edges**********")
+	printList(edges)
 	edgeWeight = {}
 	w = 1
 	for e in edges:
 		edgeWeight[e] = w
 		w += 1
-	print(edgeWeight)
+	print("\n*********edge weights**********")
+	printDict(edgeWeight)
 	# prev, shortest = daqShortestPath(daq, edgeWeight, sourceNode)
 	# print(prev)
 	# print(shortest)
 	destNode = "catch glove"
 	path, pathWeight = getShortestPath(daq, edgeWeight, sourceNode, destNode)
+	print("\n*********shortest path**********")
 	printList(path)
-	print(pathWeight)
+	print("The shortest path weight is " + str(pathWeight))
 	pass
 
 if __name__ == '__main__':

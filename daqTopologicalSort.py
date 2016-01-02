@@ -1,3 +1,7 @@
+'''
+Topological sort of a directed acyclic graph
+into ordered nodes
+'''
 import sys
 
 def daqTopoSort(aDaq, root):
