@@ -9,7 +9,7 @@ def daqTopoSort(aDaq, root):
 	deg = getDaqDegree(aDaq)
 	nextNode = []
 	for key, value in deg.items():
-		if deg[key] == 0: 
+		if deg[key] == 0:
 			nextNode.append(key)
 	if root not in [""]:
 		try:

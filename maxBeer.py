@@ -10,7 +10,7 @@ def getMaxBeer(pay):
 	beer = 0
 	cap = 0
 	bot = 0
-
+	
 	paid = divmod(pay, PRICE)[0]
 	beer = paid
 	cap = paid

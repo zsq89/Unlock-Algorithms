@@ -1,6 +1,9 @@
 '''
 This file contains several sorting algorithms:
-selectionSort
+	selection sort - selectionSort
+	insertion sort - insertionSort
+	merge sort - mergeSort
+	quick sort - quickSort
 '''
 import sys
 from math import inf
@@ -79,7 +82,7 @@ def partitionList(aList, p, r):
 	aList[k] = aList[r]
 	aList[r] = temp
 	return k
-	
+
 def main():
 	aList = [2,5,1,25,20,6,12,9]
 	sortedList = selectionSort(aList)
